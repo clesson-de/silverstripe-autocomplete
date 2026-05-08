@@ -1,0 +1,8 @@
+de:
+  Clesson\Silverstripe\Autocomplete\Forms\AutocompleteField:
+    PLACEHOLDER: 'Bitte eingeben...'
+
+  Clesson\Silverstripe\Autocomplete\Controllers\AutocompleteController:
+    NOT_LOGGED_IN: 'Sie müssen angemeldet sein.'
+    INVALID_SOURCE: 'Ungültige Datenquelle.'
+

@@ -1,0 +1,22 @@
+{
+    "name": "clesson-de/silverstripe-autocomplete",
+    "description": "Silverstripe CMS module providing an autocomplete form field with model- or callback-based suggestions.",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": "^8.1",
+        "silverstripe/framework": "^6",
+        "silverstripe/admin": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clesson\\Silverstripe\\Autocomplete\\": "src/"
+        }
+    },
+    "extra": {
+        "expose": [
+            "client/dist"
+        ]
+    }
+}
+

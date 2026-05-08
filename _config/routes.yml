@@ -1,0 +1,11 @@
+---
+Name: autocomplete-routes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+
+SilverStripe\Control\Director:
+  rules:
+    'autocomplete-api': 'Clesson\Silverstripe\Autocomplete\Controllers\AutocompleteController'
+

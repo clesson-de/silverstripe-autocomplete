@@ -1,0 +1,8 @@
+en:
+  Clesson\Silverstripe\Autocomplete\Forms\AutocompleteField:
+    PLACEHOLDER: 'Start typing...'
+
+  Clesson\Silverstripe\Autocomplete\Controllers\AutocompleteController:
+    NOT_LOGGED_IN: 'You must be logged in.'
+    INVALID_SOURCE: 'Invalid source.'
+

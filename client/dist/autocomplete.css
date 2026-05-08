@@ -1,0 +1,31 @@
+.ss-autocomplete-field {
+    position: relative;
+}
+
+.ss-autocomplete-field__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 2px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.ss-autocomplete-field__item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.ss-autocomplete-field__item:hover,
+.ss-autocomplete-field__item.is-active {
+    background: #f1f7fd;
+}
+
