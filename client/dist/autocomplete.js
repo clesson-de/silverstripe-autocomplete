@@ -2,6 +2,10 @@
     'use strict';
 
     function initField(root) {
+        // Prevent double-initialization
+        if (root.dataset.autocompleteInitialized === 'true') { return; }
+        root.dataset.autocompleteInitialized = 'true';
+
         var input = root.querySelector('.ss-autocomplete-field__input');
         var list = root.querySelector('.ss-autocomplete-field__list');
 
@@ -115,14 +119,27 @@
         });
     }
 
+    // Initialize via jQuery Entwine so AJAX-loaded CMS forms are covered.
+    // Falls back to DOMContentLoaded when jQuery/Entwine is not yet available.
     function initAll() {
         document.querySelectorAll('.ss-autocomplete-field').forEach(initField);
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAll);
+    if (typeof jQuery !== 'undefined' && typeof jQuery.entwine !== 'undefined') {
+        jQuery.entwine('ss', function ($) {
+            $('.ss-autocomplete-field').entwine({
+                onmatch: function () {
+                    initField(this[0]);
+                    this._super();
+                }
+            });
+        });
     } else {
-        initAll();
+        // Fallback: plain DOMContentLoaded (non-CMS use)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initAll);
+        } else {
+            initAll();
+        }
     }
 })();
-
