@@ -17,6 +17,15 @@
         "expose": [
             "client/dist"
         ]
+    },
+    "require-dev": {
+        "clesson-de/silverstripe-codeguard": "^0.0.3",
+        "phpstan/phpstan": "^2.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
     }
 }
-
